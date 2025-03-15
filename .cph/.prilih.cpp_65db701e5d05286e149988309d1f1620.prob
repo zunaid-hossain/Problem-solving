@@ -1,1 +1,0 @@
-{"name":"Local: prilih","url":"e:\\contestCPP\\prilih.cpp","tests":[{"id":1731152092175,"input":"1\n10 4 8\n","output":"422121017\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\contestCPP\\prilih.cpp","group":"local","local":true}
