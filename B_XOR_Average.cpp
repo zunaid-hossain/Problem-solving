@@ -3,24 +3,23 @@
 using namespace std;
 
 void work() {
-    int n,k;
-    cin>>n>>k;
-    vector<int>arr;
-
-    for(int i=n;i>0;i--)
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    if(n%2!=0)
     {
-        arr.push_back(i);
+        arr.assign(n,1);
     }
-    for(int i=0;i<k;i++)
+    if(n%2==0)
     {
-        arr.insert(arr.begin()+i,arr.back());
-        arr.pop_back();
+        arr[0]=1;
+        arr[1]=3;
+        fill(arr.begin()+2, arr.end(), 2);
     }
     for(auto i:arr)
     {
         cout<<i<<" ";
     }cout<<endl;
-    
 }
 
 int main() {
