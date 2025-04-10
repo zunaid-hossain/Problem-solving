@@ -3,28 +3,28 @@
 using namespace std;
 
 void work() {
-    int a,n;
-    cin>>a>>n;
-    vector<int>arr(n);
-    for(int i=0;i<n;i++)
+    string s;
+    cin>>s;
+    
+    int x=0,b=0,c=0;
+    for(int i=s.size()-1;i>0;i--)
     {
-        cin>>arr[i];
-    }
-    sort(arr.rbegin(), arr.rend());
-    int x=0;
-    for(int i=1;i<n;i++)
-    {
-        if(arr[i]==1)
+        if(s[i]=='0'&&x==0)
         {
-            x++;
+            b++;
         }
-        else if(arr[i]>=2)
+        else if(s[i]!='0')
         {
-            x+=(arr[i]*2-1);
+            x=1;
+        }
+        else if(s[i]=='0')
+        {
+            c++;
         }
         
-
-    }cout<<x<<endl;
+    }
+    cout<<s.size()-1-c<<endl;
+    
 }
 
 int main() {

@@ -7,12 +7,30 @@ void work() {
     cin>>n>>a>>b;
     string s;
     cin>>s;
-    if(a>=0&&b>=0)cout<<(a+b)*n<<endl;
-    else if(a<0&&b>=0)cout<<(a+b)*n<<endl;
-    else if(a>=0&&b<0)
+    int o=0,z=0;
+    int ans=n*a;
+
+    for(auto i:s)
     {
+        if(i=='0')z++;
+        if(i=='1')o++;
         
     }
+
+    if(b>=0)
+    {
+        ans+=b*n;
+    }
+
+    else 
+    {
+        int m = unique(s.begin(), s.end()) - s.begin();
+        ans+=b*(m/2+1);
+
+
+    }
+    cout<<ans<<endl;
+   
 }
 
 int main() {

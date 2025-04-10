@@ -3,28 +3,29 @@
 using namespace std;
 
 void work() {
-    int a,n;
-    cin>>a>>n;
+    long long int n,k,x;
+    cin>>n>>k>>x;
     vector<int>arr(n);
-    for(int i=0;i<n;i++)
+    for(auto &i:arr)
     {
-        cin>>arr[i];
+        cin>>i;
     }
-    sort(arr.rbegin(), arr.rend());
-    int x=0;
-    for(int i=1;i<n;i++)
+    int sum=0;
+    int c=0;
+    for(int i=k*n;i>=0;i--)
     {
-        if(arr[i]==1)
+        sum+=arr[i];
+        if(sum>=x)
         {
-            x++;
+            break;
         }
-        else if(arr[i]>=2)
+        else 
         {
-            x+=(arr[i]*2-1);
+            c++;
         }
-        
+    }
+    cout<<n*k-c<<endl;
 
-    }cout<<x<<endl;
 }
 
 int main() {
